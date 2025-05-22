@@ -1,7 +1,7 @@
 from tkinter import *
 import tkinter.ttk as ttk
 import tkinter.messagebox as msg
-from tkinter import IntVar
+from tkinter import IntVar, StringVar
 
 from file_manager import *
 from validator import *
@@ -77,31 +77,30 @@ Entry(window, textvariable=title).place(x=80, y=60)
 
 # description
 Label(window, text="description").place(x=20, y=100)
-description= StringVar()
+description = StringVar()
 Entry(window, textvariable=description).place(x=80, y=100)
 
 # start_time
 Label(window, text="start_time").place(x=20, y=140)
-start_time = IntVar()
+start_time = StringVar()
 Entry(window, textvariable=start_time).place(x=80, y=140)
 
-#end-timein
+# end-timein
 Label(window, text="end_time").place(x=20, y=140)
-end_time = IntVar()
+end_time = StringVar()
 Entry(window, textvariable=end_time).place(x=80, y=140)
 
-#assignee
+# assignee
 Label(window, text="assignee").place(x=20, y=140)
 assignee = StringVar()
 Entry(window, textvariable=end_time).place(x=80, y=140)
 
-
-table = ttk.Treeview(window, columns=[1, 2, 3, 4], show="headings")
+table = ttk.Treeview(window, columns=[1, 2, 3, 4, 5, 6], show="headings")
 table.heading(1, text="Id")
 table.heading(2, text="title")
 table.heading(3, text="description")
-table.heading(4, text="start_time")
-table.heading(5, text="end_time")
+table.heading(4, text="start time")
+table.heading(5, text="end time")
 table.heading(6, text="assignee")
 
 table.column(1, width=60)
@@ -110,7 +109,6 @@ table.column(3, width=100)
 table.column(4, width=100)
 table.column(5, width=100)
 table.column(6, width=100)
-
 
 table.bind("<<TreeviewSelect>>", table_select)
 

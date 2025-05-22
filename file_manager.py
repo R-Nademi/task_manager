@@ -12,8 +12,8 @@ def read_from_file(filename):
         file.close()
         return data_list
     else:
-        file = open(filename, "wb")
-        file.close()
+        # file = open(filename, "wb")
+        # file.close()
         return []
 
 def write_to_file(filename, data_list):
