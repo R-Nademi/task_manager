@@ -2,9 +2,9 @@ from tkinter import *
 import tkinter.ttk as ttk
 import tkinter.messagebox as msg
 from tkinter import IntVar, StringVar
-
 from file_manager import *
 from validator import *
+from task import Task
 
 task_list = read_from_file("task.dat")
 
@@ -43,14 +43,14 @@ def save_btn_click():
 
 
 def table_select(x):
-    selected_task = table.item(table.focus())["values"]
+    selected_task = Task(*table.item(table.focus())["values"])
     if selected_task:
-        id.set(selected_task[0])
-        title.set(selected_task[1])
-        description.set(selected_task[2])
-        start_time.set(selected_task[3])
-        end_time.set(selected_task[4])
-        assignee.set(selected_task[5])
+        id.set(selected_task.id)
+        title.set(selected_task.title)
+        description.set(selected_task.description)
+        start_time.set(selected_task.star_time)
+        end_time.set(selected_task.end_time)
+        assignee.set(selected_task.assignee)
 
 
 def edit_btn_click():
