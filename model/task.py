@@ -1,4 +1,5 @@
-from validator import task_validator
+from model.validator import *
+
 
 
 class Task :
@@ -11,14 +12,11 @@ class Task :
         self.end_time = end_time
         self.assignee = assignee
 
-    def save_task(self):
-        print(f"{self.id}-{self.title}-{self.description}-{self.star_time}-{self.end_time}-{self.assignee} saved")
+    def validate(self):
+        return task_validator(self)
 
     def to_tuple(self):
         return (self.id, self.title, self.description, self.star_time, self.end_time, self.assignee)
-
-    def validate(self):
-        return task_validator(self)
 
 
 
