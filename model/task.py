@@ -4,7 +4,7 @@ from model.validator import *
 
 class Task :
 
-    def __init__(self,id,title,description,star_time,end_time,assignee):
+    def __init__(self,id,title,description,star_time,end_time,assignee): # noqa
         self.id = id
         self.title = title
         self.description = description
@@ -16,7 +16,7 @@ class Task :
         return task_validator(self)
 
     def to_tuple(self):
-        return (self.id, self.title, self.description, self.star_time, self.end_time, self.assignee)
+        return (self.id, self.title, self.description, self.star_time, self.end_time, self.assignee) # noqa
 
 
 
