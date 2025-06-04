@@ -22,7 +22,7 @@ def read_from_file():
 
 def write_to_file(data_list):
     file = open(file_name, "wb")
-    pickle.dump(data_list, file)
+    pickle.dump(data_list, file) # noqa
     file.close()
 
 

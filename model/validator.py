@@ -2,7 +2,7 @@ import re
 from datetime import datetime
 
 
-def id_validator(id):
+def id_validator(id): # noqa
     return type(id)== int  and id > 0
 
 def title_validator(title):
